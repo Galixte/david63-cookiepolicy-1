@@ -9,10 +9,10 @@
 
 namespace david63\cookiepolicy\controller;
 
-use phpbb\controller\helper;
-use phpbb\template\template;
-use phpbb\config\config;
-use phpbb\language\language;
+use \phpbb\controller\helper;
+use \phpbb\template\template;
+use \phpbb\config\config;
+use \phpbb\language\language;
 
 class main_controller implements main_interface
 {
@@ -25,7 +25,7 @@ class main_controller implements main_interface
 	/* @var \phpbb\template\template */
 	protected $template;
 
-	/** @var phpbb\language\language */
+	/** @var \phpbb\language\language */
 	protected $language;
 
 	/**

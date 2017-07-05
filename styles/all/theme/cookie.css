@@ -17,17 +17,40 @@
     padding: 10px;
 	position: fixed;
 	z-index: 10;
+
+	bottom: 0px;
+	width: auto;
+    text-align: center;
+	left: auto;
+	right: auto;
+	line-height: 1;
+	max-width: 100%;
+}
+
+.cookie-box1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	display: block;
+	-webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding: 10px;
+	position: fixed;
+	z-index: 10;
+
 	bottom: 10px;
 	width: 200px;
     text-align: justify;
+	line-height: 2;
 }
 
-.cookie-box.leftside {
+.cookie-box1.leftside {
     left: 35px;
 	float: left;
 }
 
-.cookie-box.rightside {
+.cookie-box1.rightside {
     right: 35px;
 	float: right;
 }

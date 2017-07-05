@@ -1,4 +1,5 @@
 {% include 'overall_header.html' %}
+{% INCLUDECSS '@david63_cookiepolicy/admin_forms.css' %}
 
 <h1>{{ lang('COOKIE_POLICY') }}</h1>
 <p>{{ lang('COOKIE_POLICY_EXPLAIN') }}</p>
@@ -11,44 +12,72 @@
 
 		<dl>
 			<dt><label for="cookie_policy_enabled">{{ lang('COOKIE_POLICY_ENABLE') }}{{ lang('COLON') }}</label><br /><span>{{ lang('COOKIE_POLICY_ENABLE_EXPLAIN') }}</span></dt>
-			<dd><input type="radio" class="radio" name="cookie_policy_enabled" value="1" id="cookie_policy_enabled"{% if COOKIE_POLICY_ENABLED %} checked="checked"{% endif %}/> {{ lang('ENABLE') }}
-				<input type="radio" class="radio" name="cookie_policy_enabled" value="0" {% if not COOKIE_POLICY_ENABLED %} checked="checked"{% endif %} /> {{ lang('DISABLE') }}</dd>
+			<dd>
+				<input type="radio" id="cookie_policy_enabled1" name="cookie_policy_enabled" value="1"{% if COOKIE_POLICY_ENABLED %} checked="checked"{% endif %} />
+				<label for="cookie_policy_enabled1">{{ lang('ENABLE') }}</label>
+				<input type="radio" id="cookie_policy_enabled0" name="cookie_policy_enabled" value="0"{% if not COOKIE_POLICY_ENABLED %} checked="checked"{% endif %} />
+				<label for="cookie_policy_enabled0">{{ lang('DISABLE') }}</label>
+			</dd>
 		</dl>
 
 		<dl>
 			<dt><label for="cookie_block_links">{{ lang('COOKIE_BLOCK_LINKS') }}{{ lang('COLON') }}</label><br /><span>{{ lang('COOKIE_BLOCK_LINKS_EXPLAIN') }}</span></dt>
-			<dd><input type="radio" class="radio" name="cookie_block_links" value="1" id="cookie_block_links"{% if COOKIE_BLOCK_LINKS %} checked="checked"{% endif %}/> {{ lang('YES') }}
-				<input type="radio" class="radio" name="cookie_block_links" value="0" {% if not COOKIE_BLOCK_LINKS %} checked="checked"{% endif %} /> {{ lang('NO') }}</dd>
+			<dd>
+				<input type="radio" id="cookie_block_links1" name="cookie_block_links" value="1"{% if COOKIE_BLOCK_LINKS %} checked="checked"{% endif %} />
+				<label for="cookie_block_links1">{{ lang('YES') }}</label>
+				<input type="radio" id="cookie_block_links0" name="cookie_block_links" value="0"{% if not COOKIE_BLOCK_LINKS %} checked="checked"{% endif %} />
+				<label for="cookie_block_links0">{{ lang('NO') }}</label>
+			</dd>
 		</dl>
 
 		<dl>
 			<dt><label for="cookie_require_access">{{ lang('COOKIE_REQUIRE') }}{{ lang('COLON') }}</label><br /><span>{{ lang('COOKIE_REQUIRE_EXPLAIN') }}</span></dt>
-			<dd><input type="radio" class="radio" name="cookie_require_access" value="1" id="cookie_require_access"{% if COOKIE_REQUIRE %} checked="checked"{% endif %}/> {{ lang('YES') }}
-				<input type="radio" class="radio" name="cookie_require_access" value="0" {% if not COOKIE_REQUIRE %} checked="checked"{% endif %} /> {{ lang('NO') }}</dd>
+			<dd>
+				<input type="radio" id="cookie_require_access1" name="cookie_require_access" value="1"{% if COOKIE_REQUIRE %} checked="checked"{% endif %} />
+				<label for="cookie_require_access1">{{ lang('YES') }}</label>
+				<input type="radio" id="cookie_require_access0" name="cookie_require_access" value="0"{% if not COOKIE_REQUIRE %} checked="checked"{% endif %} />
+				<label for="cookie_require_access0">{{ lang('NO') }}</label>
+			</dd>
 		</dl>
 
 		<dl>
 			<dt><label for="cookie_on_index">{{ lang('COOKIE_POLICY_ON_INDEX') }}{{ lang('COLON') }}</label><br /><span>{{ lang('COOKIE_POLICY_ON_INDEX_EXPLAIN') }}</span></dt>
-			<dd><input type="radio" class="radio" name="cookie_on_index" value="1" {% if COOKIE_POLICY_ON_INDEX %} checked="checked"{% endif %} /> {{ lang('INDEX') }}
-				<input type="radio" class="radio" name="cookie_on_index" value="0" id="cookie_on_index"{% if not COOKIE_POLICY_ON_INDEX %} checked="checked"{% endif %}/> {{ lang('ALL') }}</dd>
+			<dd>
+				<input type="radio" id="cookie_on_index1" name="cookie_on_index" value="1"{% if COOKIE_POLICY_ON_INDEX %} checked="checked"{% endif %} />
+				<label for="cookie_on_index1">{{ lang('INDEX') }}</label>
+				<input type="radio" id="cookie_on_index0" name="cookie_on_index" value="0"{% if not COOKIE_POLICY_ON_INDEX %} checked="checked"{% endif %} />
+				<label for="cookie_on_index0">{{ lang('ALL') }}</label>
+			</dd>
 		</dl>
 
 		<dl>
 			<dt><label for="cookie_box_position">{{ lang('COOKIE_BOX_POSITION') }}{{ lang('COLON') }}</label><br /><span>{{ lang('COOKIE_BOX_POSITION_EXPLAIN') }}</span></dt>
-			<dd><input type="radio" class="radio" name="cookie_box_position" value="0" id="cookie_box_position"{% if not COOKIE_BOX_POSITION %} checked="checked"{% endif %}/> {{ lang('COOKIE_LEFT') }}
-				<input type="radio" class="radio" name="cookie_box_position" value="1" {% if COOKIE_BOX_POSITION %} checked="checked"{% endif %} /> {{ lang('COOKIE_RIGHT') }}</dd>
+			<dd>
+				<input type="radio" id="cookie_box_position1" name="cookie_box_position" value="1"{% if COOKIE_BOX_POSITION %} checked="checked"{% endif %} />
+				<label for="cookie_box_position1">{{ lang('COOKIE_LEFT') }}</label>
+				<input type="radio" id="cookie_box_position0" name="cookie_box_position" value="0"{% if not COOKIE_BOX_POSITION %} checked="checked"{% endif %} />
+				<label for="cookie_box_position0">{{ lang('COOKIE_RIGHT') }}</label>
+			</dd>
 		</dl>
 
 		<dl>
 			<dt><label for="cookie_expire">{{ lang('COOKIE_EXPIRE') }}{{ lang('COLON') }}</label><br /><span>{{ lang('COOKIE_EXPIRE_EXPLAIN') }}</span></dt>
-			<dd><input type="radio" class="radio" name="cookie_expire" value="1" id="cookie_expire"{% if COOKIE_POLICY_EXPIRE %} checked="checked"{% endif %}/> {{ lang('YES') }}
-				<input type="radio" class="radio" name="cookie_expire" value="0" {% if not COOKIE_POLICY_EXPIRE %} checked="checked"{% endif %} /> {{ lang('NO') }}</dd>
+			<dd>
+				<input type="radio" id="cookie_expire1" name="cookie_expire" value="1"{% if COOKIE_POLICY_EXPIRE %} checked="checked"{% endif %} />
+				<label for="cookie_expire1">{{ lang('YES') }}</label>
+				<input type="radio" id="cookie_expire0" name="cookie_expire" value="0"{% if not COOKIE_POLICY_EXPIRE %} checked="checked"{% endif %} />
+				<label for="cookie_expire0">{{ lang('NO') }}</label>
+			</dd>
 		</dl>
 
 		<dl>
 			<dt><label for="cookie_show_policy">{{ lang('COOKIE_SHOW_POLICY') }}{{ lang('COLON') }}</label><br /><span>{{ lang('COOKIE_SHOW_POLICY_EXPLAIN') }}</span></dt>
-			<dd><input type="radio" class="radio" name="cookie_show_policy" value="1" id="cookie_show_policy"{% if COOKIE_SHOW_POLICY %} checked="checked"{% endif %}/> {{ lang('YES') }}
-				<input type="radio" class="radio" name="cookie_show_policy" value="0" {% if not COOKIE_SHOW_POLICY %} checked="checked"{% endif %} /> {{ lang('NO') }}</dd>
+			<dd>
+				<input type="radio" id="cookie_show_policy1" name="cookie_show_policy" value="1"{% if COOKIE_SHOW_POLICY %} checked="checked"{% endif %} />
+				<label for="cookie_show_policy1">{{ lang('YES') }}</label>
+				<input type="radio" id="cookie_show_policy0" name="cookie_show_policy" value="0"{% if not COOKIE_SHOW_POLICY %} checked="checked"{% endif %} />
+				<label for="cookie_show_policy0">{{ lang('NO') }}</label>
+			</dd>
 		</dl>
 	</fieldset>
 
@@ -59,27 +88,37 @@
 
 		<dl>
 			<dt><label for="cookie_box_bg_colour">{{ lang('COOKIE_BOX_BG_COLOUR') }}{{ lang('COLON') }}</label><br /><span>{{ lang('COOKIE_BOX_BG_COLOUR_EXPLAIN') }}</span></dt>
-			<dd><input class="jscolor {hash:true}" name="cookie_box_bg_colour" type="text" id="cookie_box_bg_colour" value="{{ COOKIE_BOX_BG_COLOUR }}" size="8" maxlength="8" />&nbsp;{{ lang('CLICK_TO_SELECT') }}</dd>
+			<dd>
+				<input class="textbox2 jscolor {hash:true}" name="cookie_box_bg_colour" type="text" id="cookie_box_bg_colour" value="{{ COOKIE_BOX_BG_COLOUR }}" size="8" maxlength="8" />&nbsp;{{ lang('CLICK_TO_SELECT') }}
+			</dd>
 		</dl>
 
 		<dl>
 			<dt><label for="cookie_box_txt_colour">{{ lang('COOKIE_BOX_TXT_COLOUR') }}{{ lang('COLON') }}</label><br /><span>{{ lang('COOKIE_BOX_TXT_COLOUR_EXPLAIN') }}</span></dt>
-			<dd><input class="jscolor {hash:true}" name="cookie_box_txt_colour" type="text" id="cookie_box_txt_colour" value="{{ COOKIE_BOX_TXT_COLOUR }}" size="8" maxlength="8" />&nbsp;{{ lang('CLICK_TO_SELECT') }}</dd>
+			<dd>
+				<input class="textbox2 jscolor {hash:true}" name="cookie_box_txt_colour" type="text" id="cookie_box_txt_colour" value="{{ COOKIE_BOX_TXT_COLOUR }}" size="8" maxlength="8" />&nbsp;{{ lang('CLICK_TO_SELECT') }}
+			</dd>
 		</dl>
 
 		<dl>
 			<dt><label for="cookie_box_bdr_colour">{{ lang('COOKIE_BOX_BDR_COLOUR') }}{{ lang('COLON') }}</label><br /><span>{{ lang('COOKIE_BOX_BDR_COLOUR_EXPLAIN') }}</span></dt>
-			<dd><input class="jscolor {hash:true}" name="cookie_box_bdr_colour" type="text" id="cookie_box_bdr_colour" value="{{ COOKIE_BOX_BDR_COLOUR }}" size="8" maxlength="8" />&nbsp;{{ lang('CLICK_TO_SELECT') }}</dd>
+			<dd>
+				<input class="textbox2 jscolor {hash:true}" name="cookie_box_bdr_colour" type="text" id="cookie_box_bdr_colour" value="{{ COOKIE_BOX_BDR_COLOUR }}" size="8" maxlength="8" />&nbsp;{{ lang('CLICK_TO_SELECT') }}
+			</dd>
 		</dl>
 
 		<dl>
 			<dt><label for="cookie_box_bdr_width">{{ lang('COOKIE_BOX_BDR_WIDTH') }}{{ lang('COLON') }}</label><br /><span>{{ lang('COOKIE_BOX_BDR_WIDTH_EXPLAIN') }}</span></dt>
-			<dd><input name="cookie_box_bdr_width" type="number" id="cookie_box_bdr_width" value="{{ COOKIE_BOX_BDR_WIDTH }}" min="0" max="10" /> {{ lang('PIXELS') }}</dd>
+			<dd>
+				<input class="textbox" name="cookie_box_bdr_width" type="number" id="cookie_box_bdr_width" value="{{ COOKIE_BOX_BDR_WIDTH }}" min="0" max="10" /> {{ lang('PIXELS') }}
+			</dd>
 		</dl>
 
 		<dl>
 			<dt><label for="cookie_box_href_colour">{{ lang('COOKIE_BOX_HREF_COLOUR') }}{{ lang('COLON') }}</label><br /><span>{{ lang('COOKIE_BOX_HREF_COLOUR_EXPLAIN') }}</span></dt>
-			<dd><input class="jscolor {hash:true}" name="cookie_box_href_colour" type="text" id="cookie_box_href_colour" value="{{ COOKIE_BOX_HREF_COLOUR }}" size="8" maxlength="8" />&nbsp;{{ lang('CLICK_TO_SELECT') }}</dd>
+			<dd>
+				<input class="textbox2 jscolor {hash:true}" name="cookie_box_href_colour" type="text" id="cookie_box_href_colour" value="{{ COOKIE_BOX_HREF_COLOUR }}" size="8" maxlength="8" />&nbsp;{{ lang('CLICK_TO_SELECT') }}
+			</dd>
 		</dl>
 	</fieldset>
 
@@ -90,37 +129,51 @@
 
 		<dl>
 			<dt><label for="cookie_custom_page">{{ lang('COOKIE_CUSTOM_PAGE') }}{{ lang('COLON') }}</label><br /><span>{{ lang('COOKIE_CUSTOM_PAGE_EXPLAIN') }}</span></dt>
-			<dd><input type="radio" class="radio" name="cookie_custom_page" value="1" id="cookie_custom_page"{% if COOKIE_CUSTOM_PAGE %} checked="checked"{% endif %}/> {{ lang('YES') }}
-				<input type="radio" class="radio" name="cookie_custom_page" value="0" {% if not COOKIE_CUSTOM_PAGE %} checked="checked"{% endif %} /> {{ lang('NO') }}</dd>
+			<dd>
+				<input type="radio" id="cookie_custom_page1" name="cookie_custom_page" value="1"{% if COOKIE_CUSTOM_PAGE %} checked="checked"{% endif %} />
+				<label for="cookie_custom_page1">{{ lang('YES') }}</label>
+				<input type="radio" id="cookie_custom_page0" name="cookie_custom_page" value="0"{% if not COOKIE_CUSTOM_PAGE %} checked="checked"{% endif %} />
+				<label for="cookie_custom_page0">{{ lang('NO') }}</label>
+			</dd>
 		</dl>
 
 		<dl>
 			<dt><label for="cookie_page_bg_colour">{{ lang('COOKIE_PAGE_BG_COLOUR') }}{{ lang('COLON') }}</label><br /><span>{{ lang('COOKIE_PAGE_BG_COLOUR_EXPLAIN') }}</span></dt>
-			<dd><input class="jscolor {hash:true}" name="cookie_page_bg_colour" type="text" id="cookie_page_bg_colour" value="{{ COOKIE_PAGE_BG_COLOUR }}" size="8" maxlength="8" />&nbsp;{{ lang('CLICK_TO_SELECT') }}</dd>
+			<dd>
+				<input class="textbox2 jscolor {hash:true}" name="cookie_page_bg_colour" type="text" id="cookie_page_bg_colour" value="{{ COOKIE_PAGE_BG_COLOUR }}" size="8" maxlength="8" />&nbsp;{{ lang('CLICK_TO_SELECT') }}
+			</dd>
 		</dl>
 
 		<dl>
 			<dt><label for="cookie_page_txt_colour">{{ lang('COOKIE_PAGE_TXT_COLOUR') }}{{ lang('COLON') }}</label><br /><span>{{ lang('COOKIE_PAGE_TXT_COLOUR_EXPLAIN') }}</span></dt>
-			<dd><input class="jscolor {hash:true}" name="cookie_page_txt_colour" type="text" id="cookie_page_txt_colour" value="{{ COOKIE_PAGE_TXT_COLOUR }}" size="8" maxlength="8" />&nbsp;{{ lang('CLICK_TO_SELECT') }}</dd>
+			<dd>
+				<input class="textbox2 jscolor {hash:true}" name="cookie_page_txt_colour" type="text" id="cookie_page_txt_colour" value="{{ COOKIE_PAGE_TXT_COLOUR }}" size="8" maxlength="8" />&nbsp;{{ lang('CLICK_TO_SELECT') }}
+			</dd>
 		</dl>
 
 		<dl>
 			<dt><label for="cookie_custom_page">{{ lang('COOKIE_CUSTOM_PAGE_CORNERS') }}{{ lang('COLON') }}</label><br /><span>{{ lang('COOKIE_CUSTOM_PAGE_CORNERS_EXPLAIN') }}</span></dt>
-			<dd><input type="radio" class="radio" name="cookie_page_corners" value="1" id="cookie_page_corners"{% if COOKIE_CUSTOM_PAGE_CORNERS %} checked="checked"{% endif %}/> {{ lang('YES') }}
-				<input type="radio" class="radio" name="cookie_page_corners" value="0" {% if not COOKIE_CUSTOM_PAGE_CORNERS %} checked="checked"{% endif %} /> {{ lang('NO') }}</dd>
+			<dd>
+				<input type="radio" id="cookie_page_corners1" name="cookie_page_corners" value="1"{% if COOKIE_CUSTOM_PAGE_CORNERS %} checked="checked"{% endif %} />
+				<label for="cookie_page_corners1">{{ lang('YES') }}</label>
+				<input type="radio" id="cookie_page_corners0" name="cookie_page_corners" value="0"{% if not COOKIE_CUSTOM_PAGE_CORNERS %} checked="checked"{% endif %} />
+				<label for="cookie_page_corners0">{{ lang('NO') }}</label>
+			</dd>
 		</dl>
 
 		<dl>
 			<dt><label for="cookie_custom_page_radius">{{ lang('COOKIE_CUSTOM_PAGE_RADIUS') }}{{ lang('COLON') }}</label><br /><span>{{ lang('COOKIE_CUSTOM_PAGE_RADIUS_EXPLAIN') }}</span></dt>
-			<dd><input name="cookie_page_radius" type="number" id="cookie_page_radius" value="{{ COOKIE_CUSTOM_PAGE_RADIUS }}" min="0" max="99" /> {{ lang('PIXELS') }}</dd>
+			<dd>
+				<input class="textbox" name="cookie_page_radius" type="number" id="cookie_page_radius" value="{{ COOKIE_CUSTOM_PAGE_RADIUS }}" min="0" max="99" /> {{ lang('PIXELS') }}
+			</dd>
 		</dl>
 	</fieldset>
 
 	<fieldset>
 		<legend>{{ lang('ACP_SUBMIT_CHANGES') }}</legend>
 		<p class="submit-buttons">
-			<input class="button1" type="submit" id="submit" name="submit" value="{{ lang('SUBMIT') }}" />&nbsp;
-			<input class="button2" type="reset" id="reset" name="reset" value="{{ lang('RESET') }}" />
+			<input class="adm-button" type="submit" id="submit" name="submit" value="{{ lang('SUBMIT') }}" />&nbsp;
+			<input class="adm-button" type="reset" id="reset" name="reset" value="{{ lang('RESET') }}" />
 		</p>
 		{{ S_FORM_TOKEN }}
 	</fieldset>

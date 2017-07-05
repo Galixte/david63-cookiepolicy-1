@@ -10,7 +10,7 @@
 
 namespace david63\cookiepolicy;
 
-use phpbb\extension\base;
+use \phpbb\extension\base;
 
 class ext extends base
 {
@@ -25,17 +25,24 @@ class ext extends base
 	* @access public
 	*/
 	public function is_enableable()
-	{
-		$config = $this->container->get('config');
+ 	{
+		// Requires phpBB 3.2.0 or newer.
+		$is_enableable = phpbb_version_compare(PHPBB_VERSION, '3.2.0', '>=');
 
-		if (!phpbb_version_compare($config['version'], '3.2.0', '>='))
+		// Display a custom warning message if requirement fails.
+		if (!$is_enableable)
 		{
-			$this->container->get('language')->add_lang('ext_cookiepolicy', 'david63/cookiepolicy');
-			trigger_error($this->container->get('language')->lang('VERSION_32') . adm_back_link(append_sid('index.' . $this->container->getParameter('core.php_ext'), 'i=acp_extensions&amp;mode=main')), E_USER_WARNING);
+			// Need to cater for 3.1 and 3.2
+			if (phpbb_version_compare(PHPBB_VERSION, '3.2.0', '>='))
+			{
+				$this->container->get('language')->add_lang('ext_enable_error', 'david63/cookiepolicy');
+			}
+			else
+			{
+				$this->container->get('user')->add_lang_ext('david63/cookiepolicy', 'ext_enable_error');
+			}
 		}
-		else
-		{
-			return true;
-		}
-	}
+
+		return $is_enableable;
+ 	}
 }

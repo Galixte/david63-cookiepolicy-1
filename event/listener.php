@@ -13,13 +13,13 @@ namespace david63\cookiepolicy\event;
 * @ignore
 */
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use phpbb\config\config;
-use phpbb\template\template;
-use phpbb\user;
-use phpbb\log\log;
-use phpbb\controller\helper;
-use phpbb\request\request;
-use phpbb\request\request_interface;
+use \phpbb\config\config;
+use \phpbb\template\template;
+use \phpbb\user;
+use \phpbb\log\log;
+use \phpbb\controller\helper;
+use \phpbb\request\request;
+use \phpbb\request\request_interface;
 
 /**
 * Event listener

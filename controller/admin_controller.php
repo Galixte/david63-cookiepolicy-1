@@ -10,13 +10,13 @@
 namespace david63\cookiepolicy\controller;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use phpbb\config\config;
-use phpbb\request\request;
-use phpbb\template\template;
-use phpbb\user;
-use phpbb\language\language;
-use phpbb\log\log;
-use david63\cookiepolicy\ext;
+use \phpbb\config\config;
+use \phpbb\request\request;
+use \phpbb\template\template;
+use \phpbb\user;
+use \phpbb\language\language;
+use \phpbb\log\log;
+use \david63\cookiepolicy\ext;
 
 /**
 * Admin controller
@@ -35,7 +35,7 @@ class admin_controller implements admin_interface
 	/** @var \phpbb\user */
 	protected $user;
 
-	/** @var phpbb\language\language */
+	/** @var \phpbb\language\language */
 	protected $language;
 
 	/** @var \phpbb\log\log */

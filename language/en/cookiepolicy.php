@@ -37,7 +37,7 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, array(
-	'COOKIE_ACCEPT_TEXT'	=> 'This board uses cookies to give you the best and most relevant experience. To use this board this means that you need accept the policy.<br /><br />You can find out more about the cookies used by clicking the "Cookie policy" on the main page or the link below.<br /><br />',
+	'COOKIE_ACCEPT_TEXT'	=> 'This board uses cookies to give you the best and most relevant experience. To use this board this means that you need accept the policy.<br />You can find out more about the cookies used by clicking the "Cookie policy" on the main page or the link below.<br />',
 	'COOKIE_ACCEPT'			=> '[ I accept ]',
 	'COOKIE_ACCESS'			=> 'Cookie Access',
 

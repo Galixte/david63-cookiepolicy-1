@@ -16,7 +16,7 @@
 			$('.cookieAcceptBox').css({
 				'background-color': cookieBoxBgColour,
 				'color': cookieBoxTxtColour,
-				'border': cookieBoxBdWidth + 'px solid' + cookieBoxBdColour
+				'border': cookieBoxBdWidth + 'px solid' + cookieBoxBdColour,
 			});
 
 			$('.cookieAcceptBox a').css('color', cookieBoxHrefColour);
